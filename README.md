@@ -122,7 +122,10 @@ import SSE from 'easy-server-sent-events/sse';
 Create a new instance of the library and add eventlisteners
 
 ```js
-const sse = new SSE();
+// Create an instance
+// a connect it to the endpoint
+// '/api/sse' (default)
+const sse = new SSE('/api/sse');
 
 sse.listen('message', (data) => {
   console.log('message', data);
@@ -145,7 +148,7 @@ If you want to remove and event listener you can save the result of a call to **
 
 
 ```js
-const sse = new SSE();
+const sse = new SSE('/api/sse');
 
 let messageListener = sse.listen('message', (data) => {
   console.log('message', data);
