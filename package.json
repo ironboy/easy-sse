@@ -1,0 +1,19 @@
+{
+  "name": "easy-sse",
+  "version": "1.0.0",
+  "description": "An easy to use Server Side Events library for Node.js + frontend",
+  "author": "Thomas Frank <thomas@nodehill.com>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ironboy/easy-sse.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ironboy/easy-sse/issues"
+  },
+  "homepage": "https://github.com/ironboy/easy-sse#readme"
+}
