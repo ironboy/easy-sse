@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ironboy/easy-sse/issues"
   },
-  "homepage": "https://github.com/ironboy/easy-sse#readme"
+  "homepage": "https://github.com/ironboy/easy-sse#readme",
+  "dependencies": {
+    "http-proxy": "^1.18.0"
+  }
 }
