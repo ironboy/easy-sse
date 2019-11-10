@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 function terminateUrlWithSlash(url) {
   let p = url.split('?');
@@ -10,7 +11,7 @@ module.exports = (settings = {}) => {
   let mem = [];
   let endpoint = settings.endpoint || '/sse';
   let script = settings.script || '/sse.js';
-  let scriptSource = fs.readFileSync('./sse.js', 'utf-8');
+  let scriptSource = fs.readFileSync(path.join(__dirname, './sse.js'), 'utf-8');
   endpoint = terminateUrlWithSlash(endpoint);
   script = terminateUrlWithSlash(script);
   scriptSource = scriptSource.split('export default ')[1];
