@@ -46,7 +46,7 @@ export default class SSE {
   }
 
   endPointCalc(endPoint){
-    this.endPoint = endPoint || this.endPoint || '/sse';
+    this.endPoint = endPoint || this.endPoint || '/api/sse';
     if (!this.endPoint.includes('browserId=')) {
       this.endPoint += (this.endPoint.includes('?') ? '&' : '?')
         + 'browserId=' + this.browserId();

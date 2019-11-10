@@ -9,7 +9,7 @@ function terminateUrlWithSlash(url) {
 
 module.exports = (settings = {}) => {
   let mem = [];
-  let endpoint = settings.endpoint || '/sse';
+  let endpoint = settings.endpoint || '/api/sse';
   let script = settings.script || '/sse.js';
   let scriptSource = fs.readFileSync(path.join(__dirname, './sse.js'), 'utf-8');
   endpoint = terminateUrlWithSlash(endpoint);
