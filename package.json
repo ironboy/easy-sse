@@ -1,6 +1,6 @@
 {
   "name": "easy-server-sent-events",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "An easy to use Server Side Events library for Node.js + frontend",
   "author": "Thomas Frank <thomas@nodehill.com>",
   "main": "index.js",
@@ -12,6 +12,13 @@
     "url": "https://github.com/ironboy/easy-sse.git"
   },
   "license": "MIT",
+  "keywords": [
+    "SSE",
+    "server sent events",
+    "Express",
+    "middleware",
+    "React"
+  ],
   "bugs": {
     "url": "https://github.com/ironboy/easy-sse/issues"
   },
