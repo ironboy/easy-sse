@@ -37,7 +37,7 @@ app.use(session({
 const options = {
   endpoint: '/api/sse',
   script: '/sse.js'
-}
+};
 
 // Calling the module returns an object with four properties:
 // SSE:
