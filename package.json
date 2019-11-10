@@ -1,5 +1,5 @@
 {
-  "name": "easy-sse",
+  "name": "easy-server-sent-events",
   "version": "1.0.0",
   "description": "An easy to use Server Side Events library for Node.js + frontend",
   "author": "Thomas Frank <thomas@nodehill.com>",
