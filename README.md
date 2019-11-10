@@ -61,7 +61,7 @@ app.listen(4000, () => console.log('Listening on port 4000'));
 
 // Example of using send(to, eventType, data)
 // Here we send messages to all connected clients
-// We randomly choose the between the event types
+// We randomly choose between the event types
 // 'message' and 'other' (you can name your event types how you like)
 // and send a message (an object with the properties cool and content)
 function test() {
