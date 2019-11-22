@@ -159,7 +159,7 @@ sse.unlisten(messageListener);
 ```
 
 ### Usage with the **create-react-app** dev server: Proxying
-Proxying SSE (as well as web proxies) is hard/not doable with the build in proxy system in  **[create-react-app](create-react-app
+Proxying SSE (as well as web proxies) is hard/not doable with the built in proxy system in  **[create-react-app](create-react-app
 )**. 
 
 We recommend that you use the npm package **[react-amazing proxy](https://www.npmjs.com/package/react-amazing-proxy)** that solves all problems with letting SSE through the proxy.

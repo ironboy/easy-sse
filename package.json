@@ -1,6 +1,6 @@
 {
   "name": "easy-server-sent-events",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "An easy to use Server Side Events library for Node.js + frontend",
   "author": "Thomas Frank <thomas@nodehill.com>",
   "main": "index.js",
