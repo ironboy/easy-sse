@@ -3,6 +3,7 @@ export default class SSE {
   constructor(endpoint) {
     this.listeners = [];
     this.timeoutOnError = 200;
+    this.timeoutMem;
     this.restart(endpoint);
   }
 
@@ -11,7 +12,8 @@ export default class SSE {
     this.stream && this.stream.close();
     this.stream = new EventSource(this.endPoint);
     this.stream.addEventListener('error', () => {
-      setTimeout(() => this.addListeners(), 1000);
+      clear(this.timeoutMem);
+      this.timeoutMem = setTimeout(() => this.addListeners(), this.timeoutOnError);
       if (this.timeoutOnError < 10000) {
         this.timeoutOnError += 1000;
       }
