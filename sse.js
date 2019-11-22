@@ -2,16 +2,19 @@ export default class SSE {
 
   constructor(endpoint) {
     this.listeners = [];
+    this.timeoutOnError = 200;
     this.restart(endpoint);
   }
 
   restart(endPoint) {
     this.endPointCalc(endPoint);
-    if(this.longpolling){}
     this.stream && this.stream.close();
     this.stream = new EventSource(this.endPoint);
     this.stream.addEventListener('error', () => {
-      this.addListeners();
+      setTimeout(() => this.addListeners(), 1000);
+      if (this.timeoutOnError < 10000) {
+        this.timeoutOnError += 1000;
+      }
     });
   }
 
@@ -29,6 +32,7 @@ export default class SSE {
     this.restart();
     [...new Set(this.listeners.map(x => x.eventType))].forEach(x => {
       this.stream.addEventListener(x, (event) => {
+        this.timeoutOnError = 200;
         let data = event.data;
         try { data = JSON.parse(data) } catch (e) { }
         this.listeners
@@ -45,7 +49,7 @@ export default class SSE {
     return s.sseBrowserId;
   }
 
-  endPointCalc(endPoint){
+  endPointCalc(endPoint) {
     this.endPoint = endPoint || this.endPoint || '/api/sse';
     if (!this.endPoint.includes('browserId=')) {
       this.endPoint += (this.endPoint.includes('?') ? '&' : '?')
