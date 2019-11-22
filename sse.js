@@ -12,7 +12,7 @@ export default class SSE {
     this.stream && this.stream.close();
     this.stream = new EventSource(this.endPoint);
     this.stream.addEventListener('error', () => {
-      clear(this.timeoutMem);
+      clearTimeout(this.timeoutMem);
       this.timeoutMem = setTimeout(() => this.addListeners(), this.timeoutOnError);
       if (this.timeoutOnError < 10000) {
         this.timeoutOnError += 1000;
