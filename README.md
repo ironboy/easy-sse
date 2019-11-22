@@ -159,23 +159,10 @@ sse.unlisten(messageListener);
 ```
 
 ### Usage with the **create-react-app** dev server: Proxying
-You can start a **Express/Node.js** server in parallell with the **create-react-app dev server** and proxy the output from the **Express** server so that it is served on the same port as the output from the dev server. However [the documented solution](https://create-react-app.dev/docs/proxying-api-requests-in-development/#configuring-the-proxy-manually) for this does not work with Server Side Events (because of [buffer problems](https://github.com/facebook/create-react-app/issues/3391)).
+Proxying SSE (as well as web proxies) is hard/not doable with the build in proxy system in  **[create-react-app](create-react-app
+)**. 
 
-Instead we provide a tailor-made solution:
-
-1. Create a file named **setupProxy.js** (you must use *exactly* this name) in the *src* folder.
-2. Add the following content to that file:
-
-```js
-const proxy = require('easy-server-sent-events/react-dev-proxy');
-module.exports = proxy({
-  route: '/api/',
-  target: 'http://localhost:4000'
-});
-```
-
-You can change the route to proxy and the target (depending on which port you use for your **Express** server).
-
+We recommend that you use the npm package **[react-amazing proxy](https://www.npmjs.com/package/react-amazing-proxy)** that solves all problems with letting SSE through the proxy.
 
 ### Older browsers
 Microsoft Edge and Microsoft IE does not support *server sent events* because of lack of support for the **EventSource** object. There is a polyfill available:  
